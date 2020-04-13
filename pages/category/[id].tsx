@@ -127,9 +127,9 @@ const Category = ({ posts }) => (
   </>
 );
 
-export const getServerSideProps = async context => {
-  const api = new API();
-  const posts = await api.getPostsByCategory(context.query.id);
+export const getServerSideProps = async ({ query }) => {
+  const apiRef = new API();
+  const posts = await apiRef.getPostsByCategory(query.id);
   return {
     props: {
       posts

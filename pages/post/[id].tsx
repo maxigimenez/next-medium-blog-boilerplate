@@ -148,9 +148,9 @@ const Post = (post: PostModel) => {
   </>
 }
 
-export const getServerSideProps = async context => {
-  const api = new API();
-  const post = await api.getPostBySlug(context.query.id);
+export const getServerSideProps = async ({ query }) => {
+  const apiRef = new API();
+  const post = await apiRef.getPostBySlug(query.id);
   return {
     props: {
       ...post
