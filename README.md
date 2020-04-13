@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# Next.js Medium style boilerplate blog
+
+**Under development**
+
+> This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+
+## Template
+
+This project uses [Mudana](https://www.wowthemes.net/mundana-free-html-bootstrap-template/) to achieve the medium style blog.
 
 ## Getting Started
 
