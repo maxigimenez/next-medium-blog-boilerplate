@@ -1,203 +1,195 @@
 import Head from 'next/head';
+import { Nav } from '../components/nav';
+import { Footer } from '../components/footer';
 
-const Home = () => (
-  <div className="container">
+const Home = () => {
+  return <>
     <Head>
-      <title>Create Next App</title>
-      <link rel="icon" href="/favicon.ico" />
+      <title>Next.js Medium Style Blog</title>
+      <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700" rel="stylesheet"></link>
     </Head>
 
-    <main>
-      <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+    <Nav />
 
-      <p className="description">
-        Get started by editing <code>pages/index.js</code>
-      </p>
-
-      <div className="grid">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
-
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
-
-        <a
-          href="https://zeit.co/new?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card"
-        >
-          <h3>Deploy &rarr;</h3>
-          <p>
-            Instantly deploy your Next.js site to a public URL with ZEIT Now.
-          </p>
-        </a>
+    <div className="container">
+      <div className="jumbotron jumbotron-fluid mb-3 pt-0 pb-0 bg-lightblue position-relative">
+        <div className="pl-4 pr-0 h-100 tofront">
+          <div className="row justify-content-between">
+            <div className="col-md-6 pt-6 pb-6 align-self-center">
+              <h1 className="secondfont mb-3 font-weight-bold">Mundana is an HTML Bootstrap Template for Professional Blogging</h1>
+              <p className="mb-3">
+                Beautifully crafted with the latest technologies, SASS & Bootstrap 4.1.3, Mundana is the perfect design for your professional blog. Homepage, post article and category layouts available.
+              </p>
+              <a href="./article.html" className="btn btn-dark">Read More</a>
+            </div>
+            <div className="col-md-6 d-none d-md-block pr-0" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1586765677067-f8030bd8e303?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)', backgroundSize: 'cover' }}></div>
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
 
-    <footer>
-      <a
-        href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-      </a>
-    </footer>
+    <div className="container pt-4 pb-4">
+      <div className="row">
+        <div className="col-lg-6">
+          <div className="card border-0 mb-4 box-shadow h-xl-300">
+            <div style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1586765677067-f8030bd8e303?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)', backgroundSize: 'cover', height: '150px' }}></div>
+            <div className="card-body px-0 pb-0 d-flex flex-column align-items-start">
+              <h2 className="h4 font-weight-bold">
+                <a className="text-dark" href="./article.html">Brain Stimulation Relieves Depression Symptoms</a>
+              </h2>
+              <p className="card-text">
+                Researchers have found an effective target in the brain for electrical stimulation to improve mood in people suffering from depression.
+              </p>
+              <div>
+                <small className="d-block"><a className="text-muted" href="./author.html">Favid Rick</a></small>
+                <small className="text-muted">Dec 12 &middot; 5 min read</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-lg-6">
+          <div className="flex-md-row mb-4 box-shadow h-xl-300">
+            <div className="mb-3 d-flex align-items-center">
+              <img height="80" src="https://images.unsplash.com/photo-1586765677067-f8030bd8e303?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+              <div className="pl-3">
+                <h2 className="mb-2 h6 font-weight-bold">
+                  <a className="text-dark" href="./article.html">Nasa's IceSat space laser makes height maps of Earth</a>
+                </h2>
+                <div className="card-text text-muted small">
+                  Jake Bittle in LOVE/HATE
+                </div>
+                <small className="text-muted">Dec 12 &middot; 5 min read</small>
+              </div>
+            </div>
+            <div className="mb-3 d-flex align-items-center">
+              <img height="80" src="https://images.unsplash.com/photo-1586765677067-f8030bd8e303?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+              <div className="pl-3">
+                <h2 className="mb-2 h6 font-weight-bold">
+                  <a className="text-dark" href="./article.html">Underwater museum brings hope to Lake Titicaca</a>
+                </h2>
+                <div className="card-text text-muted small">
+                  Jake Bittle in LOVE/HATE
+                </div>
+                <small className="text-muted">Dec 12 &middot; 5 min read</small>
+              </div>
+            </div>
+            <div className="mb-3 d-flex align-items-center">
+              <img height="80" src="https://images.unsplash.com/photo-1586765677067-f8030bd8e303?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+              <div className="pl-3">
+                <h2 className="mb-2 h6 font-weight-bold">
+                  <a className="text-dark" href="./article.html">Sun-skimming probe starts calling home</a>
+                </h2>
+                <div className="card-text text-muted small">
+                  Jake Bittle in LOVE/HATE
+                </div>
+                <small className="text-muted">Dec 12 &middot; 5 min read</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <style jsx>{`
-      .container {
-        min-height: 100vh;
-        padding: 0 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+    <div className="container">
+      <div className="row justify-content-between">
+        <div className="col-md-8">
+          <h5 className="font-weight-bold spanborder"><span>All Stories</span></h5>
+          <div className="mb-3 d-flex justify-content-between">
+            <div className="pr-3">
+              <h2 className="mb-1 h4 font-weight-bold">
+                <a className="text-dark" href="./article.html">Nearly 200 Great Barrier Reef coral species also live in the deep sea</a>
+              </h2>
+              <p>
+                There are more coral species lurking in the deep ocean that previously thought.
+              </p>
+              <div className="card-text text-muted small">
+                Jake Bittle in SCIENCE
+              </div>
+              <small className="text-muted">Dec 12 &middot; 5 min read</small>
+            </div>
+            <img height="120" src="https://images.unsplash.com/photo-1586712447133-1d8836ca525c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+          </div>
+          <div className="mb-3 d-flex justify-content-between">
+            <div className="pr-3">
+              <h2 className="mb-1 h4 font-weight-bold">
+                <a className="text-dark" href="./article.html">East Antarctica's glaciers are stirring</a>
+              </h2>
+              <p>
+                Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
+              </p>
+              <div className="card-text text-muted small">
+                Jake Bittle in SCIENCE
+              </div>
+              <small className="text-muted">Dec 12 &middot; 5 min read</small>
+            </div>
+            <img height="120" src="https://images.unsplash.com/photo-1586712447133-1d8836ca525c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+          </div>
+          <div className="mb-3 d-flex justify-content-between">
+            <div className="pr-3">
+              <h2 className="mb-1 h4 font-weight-bold">
+                <a className="text-dark" href="./article.html">50 years ago, armadillos hinted that DNA wasn’t destiny</a>
+              </h2>
+              <p>
+                Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
+              </p>
+              <div className="card-text text-muted small">
+                Jake Bittle in SCIENCE
+              </div>
+              <small className="text-muted">Dec 12 &middot; 5 min read</small>
+            </div>
+            <img height="120" src="https://images.unsplash.com/photo-1586712447133-1d8836ca525c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+          </div>
+        </div>
+        <div className="col-md-4 pl-4">
+          <h5 className="font-weight-bold spanborder"><span>Popular</span></h5>
+          <ol className="list-featured">
+            <li>
+              <span>
+                <h6 className="font-weight-bold">
+                  <a href="./article.html" className="text-dark">Did Supernovae Kill Off Large Ocean Animals?</a>
+                </h6>
+                <p className="text-muted">
+                  Jake Bittle in SCIENCE
+                </p>
+              </span>
+            </li>
+            <li>
+              <span>
+                <h6 className="font-weight-bold">
+                  <a href="./article.html" className="text-dark">Humans Reversing Climate Clock: 50 Million Years</a>
+                </h6>
+                <p className="text-muted">
+                  Jake Bittle in SCIENCE
+                </p>
+              </span>
+            </li>
+            <li>
+              <span>
+                <h6 className="font-weight-bold">
+                  <a href="./article.html" className="text-dark">Unprecedented Views of the Birth of Planets</a>
+                </h6>
+                <p className="text-muted">
+                  Jake Bittle in SCIENCE
+                </p>
+              </span>
+            </li>
+            <li>
+              <span>
+                <h6 className="font-weight-bold">
+                  <a href="./article.html" className="text-dark">Effective New Target for Mood-Boosting Brain Stimulation Found</a>
+                </h6>
+                <p className="text-muted">
+                  Jake Bittle in SCIENCE
+                </p>
+              </span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
 
-      main {
-        padding: 5rem 0;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer {
-        width: 100%;
-        height: 100px;
-        border-top: 1px solid #eaeaea;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer img {
-        margin-left: 0.5rem;
-      }
-
-      footer a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .title a {
-        color: #0070f3;
-        text-decoration: none;
-      }
-
-      .title a:hover,
-      .title a:focus,
-      .title a:active {
-        text-decoration: underline;
-      }
-
-      .title {
-        margin: 0;
-        line-height: 1.15;
-        font-size: 4rem;
-      }
-
-      .title,
-      .description {
-        text-align: center;
-      }
-
-      .description {
-        line-height: 1.5;
-        font-size: 1.5rem;
-      }
-
-      code {
-        background: #fafafa;
-        border-radius: 5px;
-        padding: 0.75rem;
-        font-size: 1.1rem;
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-      }
-
-      .grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        max-width: 800px;
-        margin-top: 3rem;
-      }
-
-      .card {
-        margin: 1rem;
-        flex-basis: 45%;
-        padding: 1.5rem;
-        text-align: left;
-        color: inherit;
-        text-decoration: none;
-        border: 1px solid #eaeaea;
-        border-radius: 10px;
-        transition: color 0.15s ease, border-color 0.15s ease;
-      }
-
-      .card:hover,
-      .card:focus,
-      .card:active {
-        color: #0070f3;
-        border-color: #0070f3;
-      }
-
-      .card h3 {
-        margin: 0 0 1rem 0;
-        font-size: 1.5rem;
-      }
-
-      .card p {
-        margin: 0;
-        font-size: 1.25rem;
-        line-height: 1.5;
-      }
-
-      @media (max-width: 600px) {
-        .grid {
-          width: 100%;
-          flex-direction: column;
-        }
-      }
-    `}</style>
-
-    <style jsx global>{`
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-    `}</style>
-  </div>
-);
+    <Footer />
+  </>
+}
 
 export default Home;
