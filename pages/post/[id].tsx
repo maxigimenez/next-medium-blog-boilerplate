@@ -2,8 +2,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 
-import { Footer } from '../../components/footer';
-import { Nav } from '../../components/nav';
 import { API } from '../../core';
 import { Post as PostModel } from '../../core/models';
 
@@ -13,8 +11,6 @@ const Post = (post: PostModel) => {
       <title>Next.js Medium Style Blog</title>
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700" rel="stylesheet"></link>
     </Head>
-
-    <Nav />
 
     <div className="container">
       <div className="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
@@ -149,8 +145,6 @@ const Post = (post: PostModel) => {
         </div>
       </div>
     </div> */}
-
-    <Footer />
   </>
 }
 

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 
 const Home = () => {
@@ -8,8 +7,6 @@ const Home = () => {
       <title>Next.js Medium Style Blog</title>
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700" rel="stylesheet"></link>
     </Head>
-
-    <Nav />
 
     <div className="container">
       <div className="jumbotron jumbotron-fluid mb-3 pt-0 pb-0 bg-lightblue position-relative">
@@ -187,8 +184,6 @@ const Home = () => {
         </div>
       </div>
     </div>
-
-    <Footer />
   </>
 }
 

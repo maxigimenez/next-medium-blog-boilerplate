@@ -1,9 +1,10 @@
 import { createClient } from 'contentful';
 import { IntegrationService } from './typings';
-import { Post } from '../models';
+import { Post, Category } from '../models';
 
 enum ContentType {
-  POST = 'postMedium'
+  POST = 'postMedium',
+  CATEGORY = 'categoryMedium'
 }
 
 export class ContentfulService implements IntegrationService {
@@ -49,6 +50,34 @@ export class ContentfulService implements IntegrationService {
       }
     });
   }
+
+  getPostsByCategory(categorySlug: string): Promise<Post[]> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const { items } = await this._client.getEntries({
+          'content_type': ContentType.POST,
+          'fields.category.fields.slug[match]': categorySlug,
+          'fields.category.sys.contentType.sys.id': ContentType.CATEGORY
+        });
+        resolve(items.map(item => createPost(item)));
+      } catch (e) {
+        return reject(e);
+      }
+    });
+  }
+
+  getCategories(): Promise<Category[]> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const { items } = await this._client.getEntries({
+          'content_type': ContentType.CATEGORY
+        });
+        resolve(items.map(item => createCategory(item)));
+      } catch (e) {
+        return reject(e);
+      }
+    });
+  }
 }
 
 const createPost = (data: any): Post => {
@@ -69,5 +98,12 @@ const createPost = (data: any): Post => {
       name: fields.category.fields.name,
       slug: fields.category.fields.slug
     }
+  };
+}
+
+const createCategory = (data: any): Category => {
+  const { name, slug } = data.fields;
+  return {
+    name, slug
   };
 }
