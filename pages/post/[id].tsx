@@ -148,15 +148,14 @@ const Post = (post: PostModel) => {
   </>
 }
 
-Post.getInitialProps = async context => {
+export const getServerSideProps = async context => {
   const api = new API();
-  try {
-    const post = await api.getPostBySlug(context.query.id);
-    console.log(post);
-    return { ...post };
-  } catch (e) {
-    return { error: true };
-  }
+  const post = await api.getPostBySlug(context.query.id);
+  return {
+    props: {
+      ...post
+    }
+  };
 }
 
 export default Post;

@@ -127,10 +127,14 @@ const Category = ({ posts }) => (
   </>
 );
 
-Category.getInitialProps = async context => {
+export const getServerSideProps = async context => {
   const api = new API();
   const posts = await api.getPostsByCategory(context.query.id);
-  return { posts };
+  return {
+    props: {
+      posts
+    }
+  };
 };
 
 export default Category;
