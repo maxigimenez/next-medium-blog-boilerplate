@@ -1,9 +1,13 @@
 import Head from 'next/head';
+import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
 
 import { Footer } from '../../components/footer';
 import { Nav } from '../../components/nav';
+import { API } from '../../core';
+import { Post as PostModel } from '../../core/models';
 
-const Post = () => {
+const Post = (post: PostModel) => {
   return <>
     <Head>
       <title>Next.js Medium Style Blog</title>
@@ -18,19 +22,19 @@ const Post = () => {
           <div className="row justify-content-between">
             <div className="col-md-6 pt-6 pb-6 pr-6 align-self-center">
               <p className="text-uppercase font-weight-bold">
-                <a className="text-danger" href="./category.html">Stories</a>
+                <Link href={`/category/${post.category.slug}`}>
+                  <a className="text-danger">{post.category.name}</a>
+                </Link>
               </p>
-              <h1 className="display-4 secondfont mb-3 font-weight-bold">Sterling could jump 8% if Brexit deal gets approved by UK Parliament</h1>
-              <p className="mb-3">
-                Analysts told CNBC that the currency could hit anywhere between $1.35-$1.40 if the deal gets passed through the U.K. parliament.
-              </p>
+              <h1 className="display-4 secondfont mb-3 font-weight-bold">{post.title}</h1>
+              <ReactMarkdown source={post.shortBody} className="mb-3" />
               <div className="d-flex align-items-center">
-                <img className="rounded-circle" src="https://images.unsplash.com/photo-1586712447133-1d8836ca525c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" width="70" />
-                <small className="ml-2">Jane Seymour <span className="text-muted d-block">A few hours ago &middot; 5 min. read</span></small>
+                <img className="rounded-circle" src={post.author.photo} width="70" height="70" style={{ objectFit: 'cover' }} />
+                <small className="ml-2">{post.author.name} <span className="text-muted d-block">A few hours ago &middot; 5 min. read</span></small>
               </div>
             </div>
             <div className="col-md-6 pr-0">
-              <img src="https://images.unsplash.com/photo-1586712447133-1d8836ca525c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" style={{ objectFit: 'cover', height: '100%', width: '100%' }} />
+              <img src={post.heroImage} style={{ objectFit: 'cover', height: '100%', width: '100%' }} />
             </div>
           </div>
         </div>
@@ -58,18 +62,7 @@ const Post = () => {
         </div>
         <div className="col-md-12 col-lg-8">
           <article className="article-post">
-          <p>
-            Holy grail funding non-disclosure agreement advisor ramen bootstrapping ecosystem. Beta crowdfunding iteration assets business plan paradigm shift stealth mass market seed money rockstar niche market marketing buzz market.
-          </p>
-          <p>
-            Burn rate release facebook termsheet equity technology. Interaction design rockstar network effects handshake creative startup direct mailing. Technology influencer direct mailing deployment return on investment seed round.
-          </p>
-          <p>
-            Termsheet business model canvas user experience churn rate low hanging fruit backing iteration buyer seed money. Virality release launch party channels validation learning curve paradigm shift hypotheses conversion. Stealth leverage freemium venture startup business-to-business accelerator market.
-          </p>
-          <p>
-            Freemium non-disclosure agreement lean startup bootstrapping holy grail ramen MVP iteration accelerator. Strategy market ramen leverage paradigm shift seed round entrepreneur crowdfunding social proof angel investor partner network virality.
-          </p>
+            <ReactMarkdown source={post.body} />
           </article>
           <div className="border p-5 bg-lightblue">
             <div className="row justify-content-between">
@@ -159,6 +152,17 @@ const Post = () => {
 
     <Footer />
   </>
+}
+
+Post.getInitialProps = async context => {
+  const api = new API();
+  try {
+    const post = await api.getPostBySlug(context.query.id);
+    console.log(post);
+    return { ...post };
+  } catch (e) {
+    return { error: true };
+  }
 }
 
 export default Post;
