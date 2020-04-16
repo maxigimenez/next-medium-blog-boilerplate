@@ -45,7 +45,7 @@ const Category = ({ posts }) => (
                 <div className="card-text text-muted small">
                   {post.author.name} in {post.category.name}
                 </div>
-                <small className="text-muted">Dec 12 · 5 min read</small>
+                <small className="text-muted">Dec 12 · {post.readingTime}</small>
               </div>
               <img height="120" src={post.heroImage} />
             </div>

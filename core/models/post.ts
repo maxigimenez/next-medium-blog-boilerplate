@@ -10,4 +10,5 @@ export interface Post {
   publishedAt: Date;
   author: Author;
   category: Category;
+  readingTime: string;
 }

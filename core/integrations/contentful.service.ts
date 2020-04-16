@@ -1,6 +1,7 @@
 import { createClient } from 'contentful';
 import { IntegrationService } from './typings';
 import { Post, Category } from '../models';
+import readingTime from 'reading-time';
 
 enum ContentType {
   POST = 'postMedium',
@@ -97,7 +98,8 @@ const createPost = (data: any): Post => {
     category: {
       name: fields.category.fields.name,
       slug: fields.category.fields.slug
-    }
+    },
+    readingTime: readingTime(body).text
   };
 }
 
