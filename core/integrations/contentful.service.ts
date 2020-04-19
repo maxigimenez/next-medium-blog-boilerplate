@@ -19,7 +19,8 @@ export class ContentfulService implements IntegrationService {
     return new Promise(async (resolve, reject) => {
       try {
         const { items } = await this._client.getEntries({
-          'content_type': ContentType.POST
+          'content_type': ContentType.POST,
+          'order': '-fields.publishedAt'
         });
         resolve(items.map(item => createPost(item)));
       } catch (e) {
@@ -52,7 +53,8 @@ export class ContentfulService implements IntegrationService {
         const { items } = await this._client.getEntries({
           'content_type': ContentType.POST,
           'fields.category.fields.slug[match]': categorySlug,
-          'fields.category.sys.contentType.sys.id': ContentType.CATEGORY
+          'fields.category.sys.contentType.sys.id': ContentType.CATEGORY,
+          'order': '-fields.publishedAt'
         });
         resolve(items.map(item => createPost(item)));
       } catch (e) {
