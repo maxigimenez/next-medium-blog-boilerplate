@@ -5,8 +5,8 @@ import readingTime from 'reading-time';
 import dayjs from 'dayjs';
 
 enum ContentType {
-  POST = 'postMedium',
-  CATEGORY = 'categoryMedium'
+  POST = 'post',
+  CATEGORY = 'category'
 }
 
 export class ContentfulService implements IntegrationService {
