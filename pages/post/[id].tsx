@@ -16,6 +16,7 @@ const Post = ({ post, error }: { post: PostModel, error?: boolean; }) => {
     <Head>
       <title>{post.title} - {config.title}</title>
       <meta property="og:title" content={`${post.title} - ${config.title}`} />
+      <script async src="//static.addtoany.com/menu/page.js"></script>
     </Head>
 
     <div className="container first-container">
@@ -51,14 +52,12 @@ const Post = ({ post, error }: { post: PostModel, error?: boolean; }) => {
               Share this
             </div>
             <div className="share d-inline-block">
-              {/* <!-- AddToAny BEGIN -->
-              <div className="a2a_kit a2a_kit_size_32 a2a_default_style">
-                <a className="a2a_dd" href="https://www.addtoany.com/share"></a>
-                <a className="a2a_button_facebook"></a>
-                <a className="a2a_button_twitter"></a>
-              </div>
-              <script async src="https://static.addtoany.com/menu/page.js"></script>
-              <!-- AddToAny END --> */}
+              <div className="a2a_kit a2a_kit_size_32 a2a_default_style" dangerouslySetInnerHTML={{__html: `
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_twitter"></a>
+                <a class="a2a_button_email"></a>
+              `}}></div>
             </div>
           </div>
         </div>
