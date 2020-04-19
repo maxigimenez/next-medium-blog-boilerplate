@@ -1,17 +1,18 @@
 import Head from 'next/head';
-import { API } from '../core';
-import { Post } from '../core/models';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+
+import { API } from '../core';
+import { Post } from '../core/models';
+import config from '../config';
 
 const Home = ({ posts }) => {
   return <>
     <Head>
-      <title>Next.js Medium Style Blog</title>
-      <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700" rel="stylesheet"></link>
+      <title>{config.title}</title>
     </Head>
 
-    <div className="container">
+    <div className="container first-container">
       <div className="jumbotron jumbotron-fluid mb-3 pt-0 pb-0 bg-lightblue position-relative">
         <div className="pl-4 pr-0 h-100 tofront">
           <div className="row justify-content-between">

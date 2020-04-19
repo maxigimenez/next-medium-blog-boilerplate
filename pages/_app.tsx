@@ -12,9 +12,9 @@ const CustomApp = ({ Component, pageProps, categories }) => {
     <Head>
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700" rel="stylesheet"></link>
     </Head>
-    <Nav categories={categories} />
+    {!pageProps.error && <Nav categories={categories} />}
     <Component {...pageProps} />
-    <Footer />
+    {!pageProps.error && <Footer />}
   </>;
 };
 

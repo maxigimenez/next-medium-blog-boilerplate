@@ -5,14 +5,15 @@ import ReactMarkdown from 'react-markdown';
 
 import { API } from '../../core';
 import { Post } from '../../core/models';
+import config from '../../config';
 
 const Category = ({ posts }) => (
   <>
     <Head>
-      <title>Next.js Medium Style Blog</title>
+      <title>{config.title}</title>
     </Head>
 
-    <div className="container mt-5 mb-5">
+    <div className="container mt-5 mb-5 first-container">
       <div className="row">
         <div className="col-md-8">
           <h5 className="font-weight-bold spanborder"><span>Featured in Science</span></h5>

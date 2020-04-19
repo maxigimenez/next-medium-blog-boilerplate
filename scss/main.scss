@@ -26,7 +26,9 @@
 // General
 body {
     overflow-x: hidden;
-    padding-top: 69.75px;
+}
+.first-container {
+  padding-top: 69.75px;
 }
 .sticky-top {
     top: 69.75px;
@@ -77,7 +79,7 @@ a.text-dark:hover {
     padding-top: 15px;
     padding-bottom: 15px;
 }
-.mt-neg5 { 
+.mt-neg5 {
     margin-top: -5rem;
 }
 .ml-neg5 {
@@ -95,8 +97,8 @@ a.text-dark:hover {
 }
 
 @include media-breakpoint-only(xl) {
-    .h-xl-300 { 
-      height: 300px; 
+    .h-xl-300 {
+      height: 300px;
     }
     .h-max-380 {
       max-height:380px;
@@ -112,7 +114,7 @@ a.text-dark:hover {
 .btn-round {
     border-radius: $round-radius !important;
 }
-.btn { 
+.btn {
     font-family: Source Sans Pro;
  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
     &:hover,
@@ -138,7 +140,7 @@ a.text-dark:hover {
 
 .btn-link {
     &:hover,
-    &:focus { 
+    &:focus {
         box-shadow:none;
     }
 }
@@ -147,12 +149,12 @@ a.text-dark:hover {
 .btn-link.btn-#{$color} {
     @include button-variant-link($value);
     border-color: transparent;
-  } 
+  }
 }
 .btn-white {background-color:#fff;}
 // Inputs
 .input-round {
-    border-radius: $round-radius !important;    
+    border-radius: $round-radius !important;
 }
 .input-group.input-round {
     input:first-child {border-radius:30px 0 0 30px}
@@ -173,7 +175,7 @@ a.text-dark:hover {
     font-size:1.25rem;
 }
 .scrollednav {
-   
+
 }
 .dropdown-item {
     font-weight: $font-weight-base;
@@ -183,7 +185,7 @@ a.text-dark:hover {
     text-transform:none;
     box-shadow: $box-shadow-lg;
     &:before {
-        @include media-breakpoint-up(md) { 
+        @include media-breakpoint-up(md) {
             content: '';
             top: -8px;
             position: absolute;
@@ -249,7 +251,7 @@ a.text-dark:hover {
 
 // Jumbotron
 .jumbotron {
-    background-size:cover; 
+    background-size:cover;
     padding: 7rem 1rem;
 }
 @include media-breakpoint-up(lg) {
@@ -335,7 +337,7 @@ a.text-dark:hover {
         text-align: center;
         -webkti-box-sizing: border-box;
         -moz-box-sizing: border-box;
-        box-sizing: border-box; 
+        box-sizing: border-box;
        .day {
             font-size: 16px;
             line-height:1;
@@ -347,32 +349,32 @@ a.text-dark:hover {
         }
     a:hover {text-decoration:none; color: $primary;}
 }
-    
+
 .card-pricing .card ul li {
     margin-bottom:1.5rem;
 }
 
 // Icons
-.iconbox {       
-    border:1px solid;        
+.iconbox {
+    border:1px solid;
     text-align:center;
     display:inline-block;
 }
 .iconbox.iconsmall {
         width:40px;
-        height:40px;       
+        height:40px;
         line-height:40px;
         font-size:1rem;
     }
 .iconbox.iconmedium {
         width:60px;
-        height:60px;       
+        height:60px;
         line-height:60px;
         font-size:1.8rem;
     }
  .iconbox.iconlarge {
         width:80px;
-        height:80px;       
+        height:80px;
         line-height:80px;
         font-size:2.2rem;
     }
@@ -421,8 +423,8 @@ article {
     line-height:1.7;
     p, pre, figure, img, blockquote, iframed, embed {
         margin-bottom:2rem;
-    } 
-    blockquote {        
+    }
+    blockquote {
         padding-left:40px;
         margin-left:0px;
         font-style:italic;
@@ -443,7 +445,7 @@ article {
   margin: 0 .2em 0 0;vertical-align: top;}
 }
 
-.spanborder {    
+.spanborder {
     border-bottom: 1px solid $lightblue;
     margin-bottom:2rem;
 }
@@ -511,7 +513,7 @@ footer.bg-black {
         height: 100%;
         padding: 0 .5rem .5rem 1.5rem;
         border-right: 1px solid #e9ecef;
-        background-color: #fff;   
+        background-color: #fff;
        padding-bottom:50px;
     }
     .content-withfixedsidebar {
@@ -527,7 +529,7 @@ footer.bg-black {
         padding-top:80px;
         padding-bottom:30px;
     }
-    h1 + h2 { padding-top: 0; } 
+    h1 + h2 { padding-top: 0; }
 }
 
 /* JUST SOME STYLES FOR PRE CODES */

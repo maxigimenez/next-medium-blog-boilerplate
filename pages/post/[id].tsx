@@ -3,16 +3,22 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 
 import { API } from '../../core';
+import config from '../../config';
 import { Post as PostModel } from '../../core/models';
+import { NotFound } from '../../components/not-found';
 
-const Post = (post: PostModel) => {
+const Post = ({ post, error }: { post: PostModel, error?: boolean; }) => {
+  if (error) {
+    return <NotFound />;
+  }
+
   return <>
     <Head>
-      <title>Next.js Medium Style Blog</title>
-      <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700" rel="stylesheet"></link>
+      <title>{post.title} - {config.title}</title>
+      <meta property="og:title" content={`${post.title} - ${config.title}`} />
     </Head>
 
-    <div className="container">
+    <div className="container first-container">
       <div className="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
         <div className="h-100 tofront">
           <div className="row justify-content-between">
@@ -150,12 +156,12 @@ const Post = (post: PostModel) => {
 
 export const getServerSideProps = async ({ query }) => {
   const apiRef = new API();
-  const post = await apiRef.getPostBySlug(query.id);
-  return {
-    props: {
-      ...post
-    }
-  };
+  try {
+    const post = await apiRef.getPostBySlug(query.id);
+    return { props: { post } };
+  } catch (e) {
+    return { props: { post: null, error: true } }
+  }
 }
 
 export default Post;
