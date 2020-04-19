@@ -1,6 +1,8 @@
 {
   "name": "Demo Blog",
   "title": "Demo Blog - Next.js medium style boilerplate",
+  "domain": "",
+  "googleTracking": "",
   "subscription": {
     "enabled": true,
     "url": "https://sheetapi.co/apis/8oSEuumQgFaBfkbdNktgtw",

@@ -17,6 +17,15 @@ const Post = ({ post, error }: { post: PostModel, error?: boolean; }) => {
     <Head>
       <title>{post.title} - {config.title}</title>
       <meta property="og:title" content={`${post.title} - ${config.title}`} />
+      <meta property="og:site_name" content={config.domain} />
+      <meta property="og:url" content={`https://${config.domain}/post/${post.slug}`} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={post.heroImage} />
+      <meta property="og:description" content={post.shortBody} />
+      <meta name="twitter:title" content={post.title} />
+      <meta name="twitter:description" content={post.shortBody} />
+      <meta name="twitter:image" content={post.heroImage} />
+      <meta name="twitter:card" content="summary_large_image"></meta>
       <script async src="//static.addtoany.com/menu/page.js"></script>
     </Head>
 
