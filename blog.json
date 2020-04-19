@@ -1,4 +1,10 @@
 {
   "name": "Demo Blog",
-  "title": "Demo Blog - Next.js medium style boilerplate"
+  "title": "Demo Blog - Next.js medium style boilerplate",
+  "subscription": {
+    "enabled": true,
+    "url": "https://sheetapi.co/apis/8oSEuumQgFaBfkbdNktgtw",
+    "success": "Thank you for signing up. You will be the first to know about new releases",
+    "error": "An error occurred, please try again"
+  }
 }
