@@ -33,4 +33,8 @@ export class API implements IntegrationService {
   getCategories(): Promise<Category[]> {
     return this._client.getCategories();
   }
+
+  getCategory(slug: string): Promise<Category> {
+    return this._client.getCategory(slug);
+  }
 }

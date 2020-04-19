@@ -73,6 +73,24 @@ export class ContentfulService implements IntegrationService {
       }
     });
   }
+
+  getCategory(slug: string): Promise<Category> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const { items }: any = await this._client.getEntries({
+          'content_type': ContentType.CATEGORY,
+          'fields.slug[in]': slug
+        });
+        const [category] = items;
+        if (!category) {
+          return reject();
+        }
+        return resolve(createCategory(category));
+      } catch (e) {
+        return reject(e);
+      }
+    });
+  }
 }
 
 const createPost = (data: any): Post => {
