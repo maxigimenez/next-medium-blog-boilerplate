@@ -7,7 +7,7 @@ export interface Post {
   heroImage: string;
   shortBody: string;
   body: string;
-  publishedAt: Date;
+  publishedAt: string;
   author: Author;
   category: Category;
   readingTime: string;

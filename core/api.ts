@@ -18,6 +18,10 @@ export class API implements IntegrationService {
     }
   }
 
+  getPosts(): Promise<Post[]> {
+    return this._client.getPosts();
+  }
+
   getPostBySlug(slug: string): Promise<Post> {
     return this._client.getPostBySlug(slug);
   }

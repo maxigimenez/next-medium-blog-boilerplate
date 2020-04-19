@@ -26,7 +26,7 @@ const Post = (post: PostModel) => {
               <ReactMarkdown source={post.shortBody} className="mb-3" />
               <div className="d-flex align-items-center">
                 <img className="rounded-circle" src={post.author.photo} width="70" height="70" style={{ objectFit: 'cover' }} />
-                <small className="ml-2">{post.author.name} <span className="text-muted d-block">A few hours ago &middot; {post.readingTime}</span></small>
+                <small className="ml-2">{post.author.name} <span className="text-muted d-block">{post.publishedAt} &middot; {post.readingTime}</span></small>
               </div>
             </div>
             <div className="col-md-6 pr-0">

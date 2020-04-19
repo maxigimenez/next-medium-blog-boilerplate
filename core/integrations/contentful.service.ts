@@ -2,6 +2,7 @@ import { createClient } from 'contentful';
 import { IntegrationService } from './typings';
 import { Post, Category } from '../models';
 import readingTime from 'reading-time';
+import dayjs from 'dayjs';
 
 enum ContentType {
   POST = 'postMedium',
@@ -14,25 +15,18 @@ export class ContentfulService implements IntegrationService {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
   });
 
-  // async getPosts() {
-  //   try {
-  //     const posts = await this._client.getEntries({
-  //       'content_type': ContentType.BLOG_POST
-  //     });
-  //     return posts.items.map((post: any) => {
-  //       return new Post({
-  //         title: post.fields.title,
-  //         image: post.fields.image.fields.file.url,
-  //         body: post.fields.body,
-  //         introBody: post.fields.introBody,
-  //         imageAlt: post.fields.image.fields.description,
-  //         slug: post.fields.slug
-  //       });
-  //     });
-  //   } catch (e) {
-  //     throw new Error(e);
-  //   }
-  // }
+  getPosts(): Promise<Post[]> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const { items } = await this._client.getEntries({
+          'content_type': ContentType.POST
+        });
+        resolve(items.map(item => createPost(item)));
+      } catch (e) {
+        return reject(e);
+      }
+    });
+  }
 
   getPostBySlug(slug: string): Promise<Post> {
     return new Promise(async (resolve, reject) => {
@@ -89,7 +83,7 @@ const createPost = (data: any): Post => {
     slug,
     shortBody,
     body,
-    publishedAt,
+    publishedAt: dayjs(publishedAt).format('MMMM DD'),
     heroImage: hero.fields.file.url,
     author: {
       name: fields.author.fields.name,

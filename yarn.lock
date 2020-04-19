@@ -1890,6 +1890,11 @@ d@1, d@^1.0.1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
+dayjs@^1.8.24:
+  version "1.8.24"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.24.tgz#2ef8a2ab9425eaf3318fe78825be1c571027488d"
+  integrity sha512-bImQZbBv86zcOWOq6fLg7r4aqMx8fScdmykA7cSh+gH1Yh8AM0Dbw0gHYrsOrza6oBBnkK+/OaR+UAa9UsMrDw==
+
 debug@=3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"

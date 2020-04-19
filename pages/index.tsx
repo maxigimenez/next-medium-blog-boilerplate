@@ -1,7 +1,10 @@
 import Head from 'next/head';
-import { Footer } from '../components/footer';
+import { API } from '../core';
+import { Post } from '../core/models';
+import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
 
-const Home = () => {
+const Home = ({ posts }) => {
   return <>
     <Head>
       <title>Next.js Medium Style Blog</title>
@@ -91,51 +94,23 @@ const Home = () => {
       <div className="row justify-content-between">
         <div className="col-md-8">
           <h5 className="font-weight-bold spanborder"><span>All Stories</span></h5>
-          <div className="mb-3 d-flex justify-content-between">
-            <div className="pr-3">
-              <h2 className="mb-1 h4 font-weight-bold">
-                <a className="text-dark" href="./article.html">Nearly 200 Great Barrier Reef coral species also live in the deep sea</a>
-              </h2>
-              <p>
-                There are more coral species lurking in the deep ocean that previously thought.
-              </p>
-              <div className="card-text text-muted small">
-                Jake Bittle in SCIENCE
+          {posts.map((post: Post) => {
+            return <div key={post.slug} className="mb-3 d-flex justify-content-between">
+              <div className="pr-3">
+                <h2 className="mb-1 h4 font-weight-bold">
+                  <Link href={`/post/${post.slug}`}>
+                    <a className="text-dark">{post.title}</a>
+                  </Link>
+                </h2>
+                <ReactMarkdown source={post.shortBody} />
+                <div className="card-text text-muted small">
+                  {post.author.name} in {post.category.name}
+                </div>
+                <small className="text-muted">{post.publishedAt} &middot; {post.readingTime}</small>
               </div>
-              <small className="text-muted">Dec 12 &middot; 5 min read</small>
+              <img height="120" src={post.heroImage} />
             </div>
-            <img height="120" src="https://images.unsplash.com/photo-1586712447133-1d8836ca525c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-          </div>
-          <div className="mb-3 d-flex justify-content-between">
-            <div className="pr-3">
-              <h2 className="mb-1 h4 font-weight-bold">
-                <a className="text-dark" href="./article.html">East Antarctica's glaciers are stirring</a>
-              </h2>
-              <p>
-                Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
-              </p>
-              <div className="card-text text-muted small">
-                Jake Bittle in SCIENCE
-              </div>
-              <small className="text-muted">Dec 12 &middot; 5 min read</small>
-            </div>
-            <img height="120" src="https://images.unsplash.com/photo-1586712447133-1d8836ca525c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-          </div>
-          <div className="mb-3 d-flex justify-content-between">
-            <div className="pr-3">
-              <h2 className="mb-1 h4 font-weight-bold">
-                <a className="text-dark" href="./article.html">50 years ago, armadillos hinted that DNA wasn’t destiny</a>
-              </h2>
-              <p>
-                Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
-              </p>
-              <div className="card-text text-muted small">
-                Jake Bittle in SCIENCE
-              </div>
-              <small className="text-muted">Dec 12 &middot; 5 min read</small>
-            </div>
-            <img height="120" src="https://images.unsplash.com/photo-1586712447133-1d8836ca525c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-          </div>
+          })}
         </div>
         <div className="col-md-4 pl-4">
           <h5 className="font-weight-bold spanborder"><span>Popular</span></h5>
@@ -186,5 +161,15 @@ const Home = () => {
     </div>
   </>
 }
+
+export const getServerSideProps = async () => {
+  const apiRef = new API();
+  const posts = await apiRef.getPosts();
+  return {
+    props: {
+      posts
+    }
+  };
+};
 
 export default Home;
