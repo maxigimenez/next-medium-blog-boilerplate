@@ -35,7 +35,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
       <div className="row justify-content-between">
         <div className="col-md-12">
           <h5 className="font-weight-bold spanborder"><span>All Stories</span></h5>
-          {posts.map((post: Post) => {
+          {posts.map(post => {
             return <div key={post.slug} className="mb-3 d-flex justify-content-between">
               <div className="pr-3">
                 <h2 className="mb-1 h4 font-weight-bold">

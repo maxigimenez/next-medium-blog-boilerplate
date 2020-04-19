@@ -31,7 +31,7 @@ const Category = ({ posts, category, error }: Props) => {
       <div className="row">
         <div className="col-md-12">
           <h5 className="font-weight-bold spanborder"><span>Featured in {category.name}</span></h5>
-          <div className="card border-0 mb-5 box-shadow">
+          {first && <div className="card border-0 mb-5 box-shadow">
             <div style={{ backgroundImage: `url(${first.heroImage})`, backgroundSize: 'cover', height: '350px' }}>
             </div>
             <div className="card-body px-0 pb-0 d-flex flex-column align-items-start">
@@ -46,7 +46,7 @@ const Category = ({ posts, category, error }: Props) => {
                 <small className="text-muted">{first.publishedAt} · {first.readingTime}</small>
               </div>
             </div>
-          </div>
+          </div>}
           <h5 className="font-weight-bold spanborder"><span>Latest</span></h5>
           {posts.map((post: Post) => {
             return <div key={post.slug} className="mb-3 d-flex justify-content-between">
