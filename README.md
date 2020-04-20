@@ -1,8 +1,14 @@
 # Next.js Medium style boilerplate blog
 
-**Under development**
-
 > This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+
+## Data Sources
+
+This project has been designed to support any data source, under the `core/` folder you can find the models and service structure.
+
+### Contentful
+
+Contentful is the default integration supported at the moment, we also provided a setup script together with a schema to easily get it up and running.
 
 ## Template
 
@@ -10,29 +16,31 @@ This project uses [Mudana](https://www.wowthemes.net/mundana-free-html-bootstrap
 
 ## Getting Started
 
-First, run the development server:
+### Install dependencies
 
-```bash
-npm run dev
-# or
-yarn dev
+```
+$ git@github.com:maxigimenez/next-medium-blog-boilerplate.git
+$ yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Setup models
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+#### Contentful
 
-## Learn More
+This projects comes with a Contentful schema ready to be used. Using `yarn setup:contentful`:
 
-To learn more about Next.js, take a look at the following resources:
+![](./setup-contentful.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the schema defined on "schemas/contentful.json".
 
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
+Once the script is done you will be able to launch the blog and see dummy information ready to be changed.
 
-## Deploy on ZEIT Now
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/) from the creators of Next.js.
+### `yarn dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Run the project locally. Then open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Deploy
+
+The repository comes with a simple `now.json` configuration, so we recommend to use [Zeit.co](https://zeit.co) to host the blog.
