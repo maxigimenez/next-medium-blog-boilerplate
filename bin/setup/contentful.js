@@ -36,7 +36,7 @@ const questions = [
   },
   {
     name: 'managementToken',
-    when: !argv.managementToken,
+    when: !argv.managementToken && !process.env.CONTENTFUL_MANAGEMENT_TOKEN,
     message: 'Your Content Management API access token',
   },
   {
@@ -49,12 +49,16 @@ const questions = [
 inquirer
   .prompt(questions)
   .then(({ spaceId, managementToken, accessToken }) => {
-    const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
+    const {
+      CONTENTFUL_SPACE_ID,
+      CONTENTFUL_ACCESS_TOKEN,
+      CONTENTFUL_MANAGEMENT_TOKEN
+    } = process.env;
 
     // env vars are given precedence followed by args provided to the setup
     // followed by input given to prompts displayed by the setup script
     spaceId = CONTENTFUL_SPACE_ID || argv.spaceId || spaceId;
-    managementToken = argv.managementToken || managementToken;
+    managementToken = CONTENTFUL_MANAGEMENT_TOKEN || argv.managementToken || managementToken;
     accessToken = CONTENTFUL_ACCESS_TOKEN || argv.accessToken || accessToken;
 
     console.log('Writing config file...');
