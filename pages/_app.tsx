@@ -12,14 +12,12 @@ const CustomApp = ({ Component, pageProps, categories }) => {
   return <>
     <Head>
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700" rel="stylesheet"></link>
-      {!!config.googleTracking && <script dangerouslySetInnerHTML={{__html: `(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-          'gtm.start':
-            new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', '${config.googleTracking}');`}}></script>}
+      {/* Enable google analytics tracking */}
+      {!!config.googleAnalytics && <script dangerouslySetInnerHTML={{__html: `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${config.googleAnalytics}');`}}></script>}
+      {!!config.googleAnalytics && <script async src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAnalytics}`}></script>}
     </Head>
     {!pageProps.error && <Nav categories={categories} />}
     <Component {...pageProps} />
