@@ -4,7 +4,7 @@ interface Config {
   name: string;
   title: string;
   domain: string;
-  googleTracking?: string;
+  googleAnalytics?: string;
   subscription: {
     enabled: boolean;
     url: string;
