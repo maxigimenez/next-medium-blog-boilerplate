@@ -1,4 +1,4 @@
-import config from '../blog.json';
+import config from '../config.json';
 
 interface Config {
   name: string;
