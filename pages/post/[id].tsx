@@ -82,10 +82,19 @@ const Post = ({ post, error }: { post: PostModel, error?: boolean; }) => {
   </>
 }
 
-export const getServerSideProps = async ({ query }) => {
+export const getStaticPaths = async () => {
+  const apiRef = new API();
+  const posts = await apiRef.getPosts();
+  return {
+    paths: posts.map(post => `/post/${post.slug}`),
+    fallback: false
+  }
+}
+
+export const getStaticProps = async ({ params }) => {
   const apiRef = new API();
   try {
-    const post = await apiRef.getPostBySlug(query.id);
+    const post = await apiRef.getPostBySlug(params.id);
     return { props: { post } };
   } catch (e) {
     return { props: { post: null, error: true } }

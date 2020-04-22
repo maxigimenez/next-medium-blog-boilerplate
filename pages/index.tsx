@@ -58,7 +58,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
   </>
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const apiRef = new API();
   const posts = await apiRef.getPosts();
   return {

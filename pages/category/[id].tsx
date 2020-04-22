@@ -75,11 +75,20 @@ const Category = ({ posts, category, error }: Props) => {
   </>
 };
 
-export const getServerSideProps = async ({ query }) => {
+export const getStaticPaths = async () => {
+  const apiRef = new API();
+  const categories = await apiRef.getCategories();
+  return {
+    paths: categories.map(category => `/category/${category.slug}`),
+    fallback: false
+  }
+}
+
+export const getStaticProps = async ({ params }) => {
   const apiRef = new API();
   try {
-    const category = await apiRef.getCategory(query.id);
-    const posts = await apiRef.getPostsByCategory(query.id);
+    const category = await apiRef.getCategory(params.id);
+    const posts = await apiRef.getPostsByCategory(params.id);
     return {
       props: {
         posts,
