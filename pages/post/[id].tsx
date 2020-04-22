@@ -95,7 +95,7 @@ export const getStaticProps = async ({ params }) => {
   const apiRef = new API();
   try {
     const post = await apiRef.getPostBySlug(params.id);
-    return { props: { post } };
+    return { props: { post }, revalidate: 1 };
   } catch (e) {
     return { props: { post: null, error: true } }
   }
