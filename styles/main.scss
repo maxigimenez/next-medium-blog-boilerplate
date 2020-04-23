@@ -4,20 +4,9 @@
 
 
 // 1- Import bootstrap framework
-@import '1-frameworks/index';
 
-// 2 - Import plugins
-@import '2-plugins/index';
-
-// 3 - Import base style, custom variables and mixins
-@import '3-base/index';
-
-// 4 - Import modules
-@import '4-modules/index';
-
-// 5 - Import layout  styles
-@import '5-layout/index';
-
+@import 'bootstrap-user-variables';
+@import '~bootstrap/scss/bootstrap';
 
 //====================================
 // Additional theme classes
