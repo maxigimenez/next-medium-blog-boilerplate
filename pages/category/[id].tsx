@@ -36,7 +36,7 @@ const Category = ({ posts, category, error }: Props) => {
             </div>
             <div className="card-body px-0 pb-0 d-flex flex-column align-items-start">
               <h2 className="h2 font-weight-bold">
-                <Link href={`/post/${first.slug}`}>
+                <Link href="/post/[id]" as={`/post/${first.slug}`}>
                   <a className="text-dark">{first.title}</a>
                 </Link>
               </h2>
@@ -52,7 +52,7 @@ const Category = ({ posts, category, error }: Props) => {
             return <div key={post.slug} className="mb-3 d-flex justify-content-between">
               <div className="pr-3">
                 <h2 className="mb-1 h4 font-weight-bold">
-                  <Link href={`/post/${post.slug}`}>
+                  <Link href="/post/[id]" as={`/post/${post.slug}`}>
                     <a className="text-dark">{post.title}</a>
                   </Link>
                 </h2>
