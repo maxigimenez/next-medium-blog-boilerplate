@@ -1,9 +1,3 @@
 {
-  "version": 2,
-  "build": {
-    "env": {
-      "CONTENTFUL_SPACE_ID": "@contentful_space_id",
-      "CONTENTFUL_ACCESS_TOKEN": "@contentful_access_token"
-    }
-  }
+  "version": 2
 }
