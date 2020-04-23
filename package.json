@@ -1,6 +1,6 @@
 {
-  "name": "nextjs-blog-medium",
-  "version": "0.1.0",
+  "name": "next-medium-blog-boilerplate",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,21 +9,22 @@
     "setup:contentful": "node bin/setup/contentful.js"
   },
   "dependencies": {
-    "contentful": "^7.14.2",
-    "dayjs": "^1.8.24",
+    "bootstrap": "4.4.1",
+    "contentful": "7.14.2",
+    "dayjs": "1.8.24",
     "next": "9.3.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-markdown": "^4.3.1",
-    "reading-time": "^1.2.0"
+    "react-markdown": "4.3.1",
+    "reading-time": "1.2.0"
   },
   "devDependencies": {
-    "@types/node": "^13.11.1",
-    "@types/react": "^16.9.34",
-    "chalk": "^4.0.0",
-    "contentful-import": "^7.7.8",
-    "inquirer": "^7.1.0",
-    "sass": "^1.26.3",
-    "typescript": "^3.8.3"
+    "@types/node": "13.11.1",
+    "@types/react": "16.9.34",
+    "chalk": "4.0.0",
+    "contentful-import": "7.7.8",
+    "inquirer": "7.1.0",
+    "sass": "1.26.3",
+    "typescript": "3.8.3"
   }
 }

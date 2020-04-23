@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 
-import '../scss/main.scss';
+import '../styles/main.scss';
 import { API } from '../core';
 import config from '../config';
 
