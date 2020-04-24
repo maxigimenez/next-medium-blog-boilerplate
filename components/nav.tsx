@@ -19,7 +19,7 @@ export const Nav = ({ categories }: Props) => (
         <ul className="navbar-nav mr-auto d-flex align-items-center">
           {categories.map((category: Category) => {
             return <li key={category.slug} className="nav-item">
-              <Link href={`/category/${category.slug}`}>
+              <Link href="/category/[id]" as={`/category/${category.slug}`}>
                 <a className="nav-link">{category.name}</a>
               </Link>
             </li>;
