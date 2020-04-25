@@ -30,7 +30,7 @@ const Post = ({ post }: { post: PostModel }) => {
           <div className="row justify-content-between">
             <div className="col-md-6 pt-6 pb-6 pr-6 align-self-center">
               <p className="text-uppercase font-weight-bold">
-                <Link href={`/category/${post.category.slug}`}>
+                <Link href="/category/[id]" as={`/category/${post.category.slug}`}>
                   <a className="text-danger">{post.category.name}</a>
                 </Link>
               </p>

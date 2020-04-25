@@ -21,7 +21,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
             <div className="col-md-6 pt-6 pb-6 align-self-center">
               <h1 className="secondfont mb-3 font-weight-bold">{first.title}</h1>
               <ReactMarkdown source={first.shortBody} className="mb-3" />
-              <Link href={`/post/${first.slug}`}>
+              <Link href="/post/[id]" as={`/post/${first.slug}`}>
                 <a className="btn btn-dark">Read More</a>
               </Link>
             </div>
@@ -39,7 +39,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
             return <div key={post.slug} className="mb-3 d-flex justify-content-between">
               <div className="pr-3">
                 <h2 className="mb-1 h4 font-weight-bold">
-                  <Link href={`/post/${post.slug}`}>
+                  <Link href="/post/[id]" as={`/post/${post.slug}`}>
                     <a className="text-dark">{post.title}</a>
                   </Link>
                 </h2>
