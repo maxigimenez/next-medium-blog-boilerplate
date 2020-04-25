@@ -41,4 +41,8 @@ export class API {
   getPostsPaths(): Promise<string[]> {
     return this._client.getPostsPaths();
   }
+
+  getCategoriesPaths(): Promise<string[]> {
+    return this._client.getCategoriesPaths();
+  }
 }

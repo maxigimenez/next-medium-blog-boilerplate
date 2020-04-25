@@ -55,16 +55,8 @@ export class ContentfulService implements IntegrationService {
   }
 
   getCategories(): Promise<Category[]> {
-    return new Promise(async (resolve, reject) => {
-      try {
-        const { items } = await this._client.getEntries({
-          'content_type': ContentType.CATEGORY
-        });
-        resolve(items.map(item => createCategory(item)));
-      } catch (e) {
-        return reject(e);
-      }
-    });
+    return this._getCategories()
+      .then(items => items.map(item => createCategory(item)));
   }
 
   getCategory(slug: string): Promise<Category> {
@@ -90,12 +82,31 @@ export class ContentfulService implements IntegrationService {
       .then(items => items.map(item => item.fields.slug));
   }
 
+  getCategoriesPaths(): Promise<string[]> {
+    return this._getCategories('fields.slug')
+      .then(items => items.map(item => item.fields.slug));
+  }
+
   private _getPosts(select?: string): Promise<any[]> {
     return new Promise(async (resolve, reject) => {
       try {
         const { items } = await this._client.getEntries({
           'content_type': ContentType.POST,
           'order': '-fields.publishedAt',
+          'select': select
+        });
+        resolve(items);
+      } catch (e) {
+        return reject(e);
+      }
+    });
+  }
+
+  private _getCategories(select?: string): Promise<any[]> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const { items } = await this._client.getEntries({
+          'content_type': ContentType.CATEGORY,
           'select': select
         });
         resolve(items);

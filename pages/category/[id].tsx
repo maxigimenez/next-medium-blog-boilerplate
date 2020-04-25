@@ -71,9 +71,9 @@ const Category = ({ posts, category }: Props) => {
 
 export const getStaticPaths = async () => {
   const apiRef = new API();
-  const categories = await apiRef.getCategories();
+  const slugs = await apiRef.getCategoriesPaths();
   return {
-    paths: categories.map(category => `/category/${category.slug}`),
+    paths: slugs.map(slug => `/category/${slug}`),
     fallback: false
   }
 }

@@ -7,4 +7,5 @@ export interface IntegrationService {
   getCategories(): Promise<Category[]>;
   getCategory(slug: string): Promise<Category>;
   getPostsPaths(): Promise<string[]>;
+  getCategoriesPaths(): Promise<string[]>;
 }
