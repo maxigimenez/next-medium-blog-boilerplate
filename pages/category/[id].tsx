@@ -6,20 +6,14 @@ import ReactMarkdown from 'react-markdown';
 import { API } from '../../core';
 import config from '../../config';
 import { Post, Category as CategoryModel } from '../../core/models';
-import { NotFound } from '../../components/not-found';
 import { Subscription } from '../../components/subscription';
 
 type Props = {
   posts?: Post[],
-  category?: CategoryModel,
-  error?: boolean
+  category?: CategoryModel
 }
 
-const Category = ({ posts, category, error }: Props) => {
-  if (!!error) {
-    return <NotFound />
-  }
-
+const Category = ({ posts, category }: Props) => {
   const [first] = posts;
 
   return <>
@@ -86,20 +80,14 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const apiRef = new API();
-  try {
-    const category = await apiRef.getCategory(params.id);
-    const posts = await apiRef.getPostsByCategory(params.id);
-    return {
-      props: {
-        posts,
-        category
-      }
-    };
-  } catch (e) {
-    return {
-      props: { error: true }
+  const category = await apiRef.getCategory(params.id);
+  const posts = await apiRef.getPostsByCategory(params.id);
+  return {
+    props: {
+      posts,
+      category
     }
-  }
+  };
 };
 
 export default Category;

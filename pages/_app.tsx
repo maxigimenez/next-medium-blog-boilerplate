@@ -32,7 +32,7 @@ CustomApp.getInitialProps = async context => {
   const apiRef = new API();
   const appProps = await App.getInitialProps(context);
   const categories = await apiRef.getCategories();
-  const isErrorPage = appProps.pageProps?.error || context.ctx.res.statusCode === 404 || false;
+  const isErrorPage = context.ctx.res.statusCode === 404 || false;
   return { ...appProps, categories, isErrorPage };
 }
 
