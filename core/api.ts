@@ -5,7 +5,7 @@ export enum Integrations {
   CONTENTFUL = 'contentful'
 }
 
-export class API implements IntegrationService {
+export class API {
   private _client: IntegrationService;
 
   constructor(integration: Integrations = Integrations.CONTENTFUL) {
@@ -36,5 +36,13 @@ export class API implements IntegrationService {
 
   getCategory(slug: string): Promise<Category> {
     return this._client.getCategory(slug);
+  }
+
+  getPostsPaths(): Promise<string[]> {
+    return this._client.getPostsPaths();
+  }
+
+  getCategoriesPaths(): Promise<string[]> {
+    return this._client.getCategoriesPaths();
   }
 }

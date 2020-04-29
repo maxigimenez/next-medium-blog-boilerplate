@@ -5,14 +5,9 @@ import ReactMarkdown from 'react-markdown';
 import { API } from '../../core';
 import config from '../../config';
 import { Post as PostModel } from '../../core/models';
-import { NotFound } from '../../components/not-found';
 import { Subscription } from '../../components/subscription';
 
-const Post = ({ post, error }: { post: PostModel, error?: boolean; }) => {
-  if (error) {
-    return <NotFound />;
-  }
-
+const Post = ({ post }: { post: PostModel }) => {
   return <>
     <Head>
       <title>{post.title} - {config.title}</title>
@@ -82,14 +77,24 @@ const Post = ({ post, error }: { post: PostModel, error?: boolean; }) => {
   </>
 }
 
-export const getServerSideProps = async ({ query }) => {
+export const getStaticPaths = async () => {
   const apiRef = new API();
-  try {
-    const post = await apiRef.getPostBySlug(query.id);
-    return { props: { post } };
-  } catch (e) {
-    return { props: { post: null, error: true } }
+  const slugs = await apiRef.getPostsPaths();
+  return {
+    paths: slugs.map(slug => `/post/${slug}`),
+    fallback: false
   }
+}
+
+export const getStaticProps = async ({ params }) => {
+  const apiRef = new API();
+  const post = await apiRef.getPostBySlug(params.id);
+  return {
+    props: {
+      post
+    },
+    revalidate: 1
+  };
 }
 
 export default Post;
