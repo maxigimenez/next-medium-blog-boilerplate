@@ -2,17 +2,17 @@
 
 exports[`footer snapshots render 1`] = `
 <div
-  class="container mt-5"
+  className="container mt-5"
 >
   <footer
-    class="bg-white border-top p-3 text-muted small"
+    className="bg-white border-top p-3 text-muted small"
   >
     <div
-      class="row align-items-center justify-content-between"
+      className="row align-items-center justify-content-between"
     >
       <div>
         <span
-          class="navbar-brand mr-2"
+          className="navbar-brand mr-2"
         >
           <strong>
             Demo Blog
@@ -23,7 +23,7 @@ exports[`footer snapshots render 1`] = `
       <div>
         Made with 
         <a
-          class="font-weight-bold"
+          className="font-weight-bold"
           href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
           target="_blank"
         >
@@ -31,7 +31,7 @@ exports[`footer snapshots render 1`] = `
         </a>
          by 
         <a
-          class="font-weight-bold"
+          className="font-weight-bold"
           href="https://twitter.com/@gmaxi_"
           target="_blank"
         >

@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from 'enzyme';
+import { shallow } from 'enzyme';
 import { Nav } from './nav';
 
 describe('nav', () => {
   describe('snapshots', () => {
     test('render without categories', () => {
-      const component = render(<Nav categories={[]} />);
+      const component = shallow(<Nav categories={[]} />);
       expect(component).toMatchSnapshot();
     });
 
@@ -17,12 +17,12 @@ describe('nav', () => {
         name: 'Category 2',
         slug: 'category-2'
       }];
-      const component = render(<Nav categories={categories} />);
+      const component = shallow(<Nav categories={categories} />);
       expect(component).toMatchSnapshot();
     });
 
     test('render if categories undefined', () => {
-      const component = render(<Nav categories={undefined} />);
+      const component = shallow(<Nav categories={undefined} />);
       expect(component).toMatchSnapshot();
     });
   });

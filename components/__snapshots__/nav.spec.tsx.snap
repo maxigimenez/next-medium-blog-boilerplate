@@ -2,47 +2,50 @@
 
 exports[`nav snapshots render if categories undefined 1`] = `
 <nav
-  class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top"
+  className="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top"
 >
   <div
-    class="container"
+    className="container"
   >
-    <a
-      class="navbar-brand"
+    <Link
       href="/"
     >
-      <strong>
-        Demo Blog
-      </strong>
-    </a>
+      <a
+        className="navbar-brand"
+      >
+        <strong>
+          Demo Blog
+        </strong>
+      </a>
+    </Link>
     <button
       aria-controls="navbarColor02"
       aria-expanded="false"
       aria-label="Toggle navigation"
-      class="navbar-toggler collapsed"
+      className="navbar-toggler collapsed"
       data-target="#navbarColor02"
       data-toggle="collapse"
       type="button"
     >
       <span
-        class="navbar-toggler-icon"
+        className="navbar-toggler-icon"
       />
     </button>
     <div
-      class="navbar-collapse collapse"
+      className="navbar-collapse collapse"
       id="navbarColor02"
     >
       <ul
-        class="navbar-nav mr-auto d-flex align-items-center"
+        className="navbar-nav mr-auto d-flex align-items-center"
       />
       <ul
-        class="navbar-nav ml-auto d-flex align-items-center"
+        className="navbar-nav ml-auto d-flex align-items-center"
       >
         <li
-          class="nav-item highlight"
+          className="nav-item highlight"
         >
           <a
-            class="nav-link"
+            className="nav-link"
             href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
             target="_blank"
           >
@@ -57,68 +60,81 @@ exports[`nav snapshots render if categories undefined 1`] = `
 
 exports[`nav snapshots render with categories 1`] = `
 <nav
-  class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top"
+  className="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top"
 >
   <div
-    class="container"
+    className="container"
   >
-    <a
-      class="navbar-brand"
+    <Link
       href="/"
     >
-      <strong>
-        Demo Blog
-      </strong>
-    </a>
+      <a
+        className="navbar-brand"
+      >
+        <strong>
+          Demo Blog
+        </strong>
+      </a>
+    </Link>
     <button
       aria-controls="navbarColor02"
       aria-expanded="false"
       aria-label="Toggle navigation"
-      class="navbar-toggler collapsed"
+      className="navbar-toggler collapsed"
       data-target="#navbarColor02"
       data-toggle="collapse"
       type="button"
     >
       <span
-        class="navbar-toggler-icon"
+        className="navbar-toggler-icon"
       />
     </button>
     <div
-      class="navbar-collapse collapse"
+      className="navbar-collapse collapse"
       id="navbarColor02"
     >
       <ul
-        class="navbar-nav mr-auto d-flex align-items-center"
+        className="navbar-nav mr-auto d-flex align-items-center"
       >
         <li
-          class="nav-item"
+          className="nav-item"
+          key="category-1"
         >
-          <a
-            class="nav-link"
-            href="/category/category-1"
+          <Link
+            as="/category/category-1"
+            href="/category/[id]"
           >
-            Category 1
-          </a>
+            <a
+              className="nav-link"
+            >
+              Category 1
+            </a>
+          </Link>
         </li>
         <li
-          class="nav-item"
+          className="nav-item"
+          key="category-2"
         >
-          <a
-            class="nav-link"
-            href="/category/category-2"
+          <Link
+            as="/category/category-2"
+            href="/category/[id]"
           >
-            Category 2
-          </a>
+            <a
+              className="nav-link"
+            >
+              Category 2
+            </a>
+          </Link>
         </li>
       </ul>
       <ul
-        class="navbar-nav ml-auto d-flex align-items-center"
+        className="navbar-nav ml-auto d-flex align-items-center"
       >
         <li
-          class="nav-item highlight"
+          className="nav-item highlight"
         >
           <a
-            class="nav-link"
+            className="nav-link"
             href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
             target="_blank"
           >
@@ -133,47 +149,50 @@ exports[`nav snapshots render with categories 1`] = `
 
 exports[`nav snapshots render without categories 1`] = `
 <nav
-  class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top"
+  className="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top"
 >
   <div
-    class="container"
+    className="container"
   >
-    <a
-      class="navbar-brand"
+    <Link
       href="/"
     >
-      <strong>
-        Demo Blog
-      </strong>
-    </a>
+      <a
+        className="navbar-brand"
+      >
+        <strong>
+          Demo Blog
+        </strong>
+      </a>
+    </Link>
     <button
       aria-controls="navbarColor02"
       aria-expanded="false"
       aria-label="Toggle navigation"
-      class="navbar-toggler collapsed"
+      className="navbar-toggler collapsed"
       data-target="#navbarColor02"
       data-toggle="collapse"
       type="button"
     >
       <span
-        class="navbar-toggler-icon"
+        className="navbar-toggler-icon"
       />
     </button>
     <div
-      class="navbar-collapse collapse"
+      className="navbar-collapse collapse"
       id="navbarColor02"
     >
       <ul
-        class="navbar-nav mr-auto d-flex align-items-center"
+        className="navbar-nav mr-auto d-flex align-items-center"
       />
       <ul
-        class="navbar-nav ml-auto d-flex align-items-center"
+        className="navbar-nav ml-auto d-flex align-items-center"
       >
         <li
-          class="nav-item highlight"
+          className="nav-item highlight"
         >
           <a
-            class="nav-link"
+            className="nav-link"
             href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
             target="_blank"
           >

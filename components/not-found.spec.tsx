@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Footer } from './footer';
+import { NotFound } from './not-found';
 
-describe('footer', () => {
+describe('not-found', () => {
   describe('snapshots', () => {
-    test('render', () => {
-      const component = shallow(<Footer />);
+    test('render default', () => {
+      const component = shallow(<NotFound />);
       expect(component).toMatchSnapshot();
     });
   });
