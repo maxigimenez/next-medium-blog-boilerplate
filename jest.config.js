@@ -27,5 +27,6 @@ module.exports = {
     "ts-jest": {
       tsConfig: "<rootDir>/tsconfig.jest.json"
     }
-  }
+  },
+  coverageReporters: ["text", "html"]
 }
