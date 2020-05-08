@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import { Category } from '../core/models';
 import config from '../config';
@@ -17,7 +18,7 @@ export const Nav = ({ categories }: Props) => (
       </button>
       <div className="navbar-collapse collapse" id="navbarColor02">
         <ul className="navbar-nav mr-auto d-flex align-items-center">
-          {categories.map((category: Category) => {
+          {categories && categories.map((category: Category) => {
             return <li key={category.slug} className="nav-item">
               <Link href="/category/[id]" as={`/category/${category.slug}`}>
                 <a className="nav-link">{category.name}</a>
