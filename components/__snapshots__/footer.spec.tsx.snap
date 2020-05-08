@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`footer snapshots render 1`] = `
+<div
+  className="container mt-5"
+>
+  <footer
+    className="bg-white border-top p-3 text-muted small"
+  >
+    <div
+      className="row align-items-center justify-content-between"
+    >
+      <div>
+        <span
+          className="navbar-brand mr-2"
+        >
+          <strong>
+            Demo Blog
+          </strong>
+        </span>
+         Copyright © 2020 . All rights reserved.
+      </div>
+      <div>
+        Made with 
+        <a
+          className="font-weight-bold"
+          href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
+          target="_blank"
+        >
+          Next.js Blog Boilerplate
+        </a>
+         by 
+        <a
+          className="font-weight-bold"
+          href="https://twitter.com/@gmaxi_"
+          target="_blank"
+        >
+          @gmaxi_
+        </a>
+        .
+      </div>
+    </div>
+  </footer>
+</div>
+`;
