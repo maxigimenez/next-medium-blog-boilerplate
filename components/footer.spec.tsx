@@ -1,9 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'enzyme';
+import { Footer } from './footer';
 
 describe('footer', () => {
-  test('dummy test', () => {
-    const footer = shallow(<p>Hello</p>);
-    expect(footer.text()).toMatch('Hello');
+  describe('snapshots', () => {
+    test('render', () => {
+      const component = render(<Footer />);
+      expect(component).toMatchSnapshot();
+    });
   });
 });

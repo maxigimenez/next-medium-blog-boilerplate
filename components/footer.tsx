@@ -1,4 +1,5 @@
-import config from "../config";
+import React from 'react';
+import config from '../config';
 
 export const Footer = () => (
   <div className="container mt-5">

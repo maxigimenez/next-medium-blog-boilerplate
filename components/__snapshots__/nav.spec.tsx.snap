@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`nav snapshots render if categories undefined 1`] = `
+<nav
+  class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top"
+>
+  <div
+    class="container"
+  >
+    <a
+      class="navbar-brand"
+      href="/"
+    >
+      <strong>
+        Demo Blog
+      </strong>
+    </a>
+    <button
+      aria-controls="navbarColor02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="navbar-toggler collapsed"
+      data-target="#navbarColor02"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        class="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      class="navbar-collapse collapse"
+      id="navbarColor02"
+    >
+      <ul
+        class="navbar-nav mr-auto d-flex align-items-center"
+      />
+      <ul
+        class="navbar-nav ml-auto d-flex align-items-center"
+      >
+        <li
+          class="nav-item highlight"
+        >
+          <a
+            class="nav-link"
+            href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
+            target="_blank"
+          >
+            Get this blog boilerplate
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`nav snapshots render with categories 1`] = `
+<nav
+  class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top"
+>
+  <div
+    class="container"
+  >
+    <a
+      class="navbar-brand"
+      href="/"
+    >
+      <strong>
+        Demo Blog
+      </strong>
+    </a>
+    <button
+      aria-controls="navbarColor02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="navbar-toggler collapsed"
+      data-target="#navbarColor02"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        class="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      class="navbar-collapse collapse"
+      id="navbarColor02"
+    >
+      <ul
+        class="navbar-nav mr-auto d-flex align-items-center"
+      >
+        <li
+          class="nav-item"
+        >
+          <a
+            class="nav-link"
+            href="/category/category-1"
+          >
+            Category 1
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            class="nav-link"
+            href="/category/category-2"
+          >
+            Category 2
+          </a>
+        </li>
+      </ul>
+      <ul
+        class="navbar-nav ml-auto d-flex align-items-center"
+      >
+        <li
+          class="nav-item highlight"
+        >
+          <a
+            class="nav-link"
+            href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
+            target="_blank"
+          >
+            Get this blog boilerplate
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`nav snapshots render without categories 1`] = `
+<nav
+  class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top"
+>
+  <div
+    class="container"
+  >
+    <a
+      class="navbar-brand"
+      href="/"
+    >
+      <strong>
+        Demo Blog
+      </strong>
+    </a>
+    <button
+      aria-controls="navbarColor02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="navbar-toggler collapsed"
+      data-target="#navbarColor02"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        class="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      class="navbar-collapse collapse"
+      id="navbarColor02"
+    >
+      <ul
+        class="navbar-nav mr-auto d-flex align-items-center"
+      />
+      <ul
+        class="navbar-nav ml-auto d-flex align-items-center"
+      >
+        <li
+          class="nav-item highlight"
+        >
+          <a
+            class="nav-link"
+            href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
+            target="_blank"
+          >
+            Get this blog boilerplate
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
