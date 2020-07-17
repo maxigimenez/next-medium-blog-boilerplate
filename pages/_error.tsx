@@ -1,3 +1,4 @@
-import { NotFound } from '../components/not-found';
+import { NotFound } from "@/components";
+
 const Error = () => (<NotFound />);
 export default Error;

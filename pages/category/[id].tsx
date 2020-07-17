@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 import ReactMarkdown from 'react-markdown';
 
-import { API } from '../../core';
-import config from '../../config';
-import { Post, Category as CategoryModel } from '../../core/models';
-import { Subscription } from '../../components/subscription';
+import { API } from '@/core/api';
+import config from '@/config';
+import { Post, Category as CategoryModel } from '@/core/models';
+import { Subscription } from '@/components';
 
 type Props = {
   posts?: Post[],
