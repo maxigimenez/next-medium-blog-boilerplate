@@ -1,12 +1,11 @@
 import App from 'next/app';
 import Head from 'next/head';
 
-import { Nav } from '../components/nav';
-import { Footer } from '../components/footer';
-
 import '../styles/main.scss';
-import { API } from '../core';
-import config from '../config';
+
+import { Nav, Footer } from '@/components';
+import config from '@/config';
+import { API } from '@/core/api';
 
 const CustomApp = ({ Component, pageProps, categories, isErrorPage }) => {
   return <>

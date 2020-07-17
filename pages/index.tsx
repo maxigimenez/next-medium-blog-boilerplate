@@ -2,9 +2,10 @@ import Head from 'next/head';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 
-import { API } from '../core';
-import { Post } from '../core/models';
-import config from '../config';
+import { Post } from '@/core/models';
+import { API } from '@/core/api';
+import config from '@/config';
+
 
 const Home = ({ posts }: { posts: Post[] }) => {
   const [first] = posts;

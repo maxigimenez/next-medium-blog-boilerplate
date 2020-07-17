@@ -2,10 +2,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 
-import { API } from '../../core';
-import config from '../../config';
-import { Post as PostModel } from '../../core/models';
-import { Subscription } from '../../components/subscription';
+import { Post as PostModel } from '@/core/models';
+import config from '@/config';
+import { API } from '@/core/api';
+
+import { Subscription } from '@/components';
 
 const Post = ({ post }: { post: PostModel }) => {
   return <>
