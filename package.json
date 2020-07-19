@@ -10,8 +10,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
-    "lint:ci": "eslint 'src/**/*.{js,ts,tsx}' --quiet"
+    "lint": "yarn lint:ci --fix",
+    "lint:ci": "eslint '{pages,components,config,core}/**/*.{js,ts,tsx}' --quiet"
   },
   "dependencies": {
     "bootstrap": "4.4.1",
