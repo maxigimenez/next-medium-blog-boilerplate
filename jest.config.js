@@ -1,7 +1,13 @@
+const { pathsToModuleNameMapper } = require("ts-jest/utils");
+const { compilerOptions } = require('./tsconfig.json');
+
 module.exports = {
   testEnvironment: "node",
   roots: [
-    "<rootDir>/components"
+    "<rootDir>/components",
+    "<rootDir>/core",
+    "<rootDir>/config",
+    "<rootDir>/pages"
   ],
   preset: 'ts-jest',
   setupFilesAfterEnv: ["<rootDir>/tests/setupTests.ts"],
@@ -28,5 +34,8 @@ module.exports = {
       tsConfig: "<rootDir>/tsconfig.jest.json"
     }
   },
-  coverageReporters: ["text", "html"]
+  coverageReporters: ["text", "html"],
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+    prefix: '<rootDir>/'
+  }),
 }
