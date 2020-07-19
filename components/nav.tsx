@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { Category } from '../core/models';
-import config from '../config';
+import config from '@/config';
+import { Category } from '@/core/models';
 
 type Props = {
   categories: Category[];
