@@ -1,4 +1,4 @@
-import { NotFound } from "@/components";
+import { NotFound } from '@/components';
 
-const Error = () => (<NotFound />);
+const Error = () => <NotFound />;
 export default Error;

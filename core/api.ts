@@ -2,7 +2,7 @@ import { Post, Category } from './models';
 import { ContentfulService, IntegrationService } from './integrations';
 
 export enum Integrations {
-  CONTENTFUL = 'contentful'
+  CONTENTFUL = 'contentful',
 }
 
 export class API {

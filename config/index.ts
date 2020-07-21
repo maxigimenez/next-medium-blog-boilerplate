@@ -10,7 +10,7 @@ interface Config {
     url: string;
     success: string;
     error: string;
-  }
+  };
 }
 
 export default config as Config;

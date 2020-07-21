@@ -10,13 +10,16 @@ describe('nav', () => {
     });
 
     test('render with categories', () => {
-      const categories = [{
-        name: 'Category 1',
-        slug: 'category-1'
-      }, {
-        name: 'Category 2',
-        slug: 'category-2'
-      }];
+      const categories = [
+        {
+          name: 'Category 1',
+          slug: 'category-1',
+        },
+        {
+          name: 'Category 2',
+          slug: 'category-2',
+        },
+      ];
       const component = shallow(<Nav categories={categories} />);
       expect(component).toMatchSnapshot();
     });
