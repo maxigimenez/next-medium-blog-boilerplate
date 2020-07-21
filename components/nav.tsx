@@ -11,7 +11,7 @@ export const Nav = ({ categories }: Props) => (
   <nav className="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div className="container">
       <Link href="/">
-        <a className="navbar-brand">
+        <a href="/" className="navbar-brand">
           <strong>{config.name}</strong>
         </a>
       </Link>
@@ -33,7 +33,9 @@ export const Nav = ({ categories }: Props) => (
               return (
                 <li key={category.slug} className="nav-item">
                   <Link href="/category/[id]" as={`/category/${category.slug}`}>
-                    <a className="nav-link">{category.name}</a>
+                    <a href={`/category/${category.slug}`} className="nav-link">
+                      {category.name}
+                    </a>
                   </Link>
                 </li>
               );
@@ -41,7 +43,12 @@ export const Nav = ({ categories }: Props) => (
         </ul>
         <ul className="navbar-nav ml-auto d-flex align-items-center">
           <li className="nav-item highlight">
-            <a className="nav-link" href="https://github.com/maxigimenez/next-medium-blog-boilerplate" target="_blank">
+            <a
+              className="nav-link"
+              href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
+              target="_blank"
+              rel="noreferrer"
+            >
               Get this blog boilerplate
             </a>
           </li>

@@ -8,23 +8,23 @@ export const Footer = () => (
         <div>
           <span className="navbar-brand mr-2">
             <strong>{config.name}</strong>
-          </span>{' '}
+          </span>
           Copyright &copy; 2020 . All rights reserved.
         </div>
         <div>
-          Made with{' '}
+          Made with
           <a
             target="_blank"
             className="font-weight-bold"
             href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
+            rel="noreferrer"
           >
             Next.js Blog Boilerplate
-          </a>{' '}
-          by{' '}
-          <a href="https://twitter.com/@gmaxi_" className="font-weight-bold" target="_blank">
+          </a>
+          by
+          <a href="https://twitter.com/@gmaxi_" className="font-weight-bold" target="_blank" rel="noreferrer">
             @gmaxi_
           </a>
-          .
         </div>
       </div>
     </footer>

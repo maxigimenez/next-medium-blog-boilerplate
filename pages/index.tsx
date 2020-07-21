@@ -24,7 +24,9 @@ const Home = ({ posts }: { posts: Post[] }) => {
                   <h1 className="secondfont mb-3 font-weight-bold">{first.title}</h1>
                   <ReactMarkdown source={first.shortBody} className="mb-3" />
                   <Link href="/post/[id]" as={`/post/${first.slug}`}>
-                    <a className="btn btn-dark">Read More</a>
+                    <a href={`/post/${first.slug}`} className="btn btn-dark">
+                      Read More
+                    </a>
                   </Link>
                 </div>
                 <div
@@ -53,7 +55,9 @@ const Home = ({ posts }: { posts: Post[] }) => {
                   <div className="pr-3">
                     <h2 className="mb-1 h4 font-weight-bold">
                       <Link href="/post/[id]" as={`/post/${post.slug}`}>
-                        <a className="text-dark">{post.title}</a>
+                        <a href={`/post/${post.slug}`} className="text-dark">
+                          {post.title}
+                        </a>
                       </Link>
                     </h2>
                     <ReactMarkdown source={post.shortBody} />
@@ -64,7 +68,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
                       {post.publishedAt} &middot; {post.readingTime}
                     </small>
                   </div>
-                  <img height="120" src={post.heroImage} />
+                  <img height="120" src={post.heroImage} alt={post.title} />
                 </div>
               );
             })}

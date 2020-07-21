@@ -35,7 +35,9 @@ const Post = ({ post }: { post: PostModel }) => {
               <div className="col-md-6 pt-6 pb-6 pr-6 align-self-center">
                 <p className="text-uppercase font-weight-bold">
                   <Link href="/category/[id]" as={`/category/${post.category.slug}`}>
-                    <a className="text-danger">{post.category.name}</a>
+                    <a href={`/category/${post.category.slug}`} className="text-danger">
+                      {post.category.name}
+                    </a>
                   </Link>
                 </p>
                 <h1 className="display-4 secondfont mb-3 font-weight-bold">{post.title}</h1>
@@ -47,6 +49,7 @@ const Post = ({ post }: { post: PostModel }) => {
                     width="70"
                     height="70"
                     style={{ objectFit: 'cover' }}
+                    alt={post.author.name}
                   />
                   <small className="ml-2">
                     {post.author.name}{' '}
@@ -57,7 +60,11 @@ const Post = ({ post }: { post: PostModel }) => {
                 </div>
               </div>
               <div className="col-md-6 pr-0">
-                <img src={post.heroImage} style={{ objectFit: 'cover', height: '100%', width: '100%' }} />
+                <img
+                  src={post.heroImage}
+                  style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+                  alt={post.title}
+                />
               </div>
             </div>
           </div>

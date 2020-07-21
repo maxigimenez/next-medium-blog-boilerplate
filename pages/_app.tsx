@@ -6,8 +6,19 @@ import '../styles/main.scss';
 import { Nav, Footer } from '@/components';
 import config from '@/config';
 import { API } from '@/core/api';
+import { Category } from '@/core/models';
 
-const CustomApp = ({ Component, pageProps, categories, isErrorPage }) => {
+const CustomApp = ({
+  Component,
+  pageProps,
+  categories,
+  isErrorPage,
+}: {
+  Component: any;
+  pageProps: any;
+  categories: Category[];
+  isErrorPage: boolean;
+}) => {
   return (
     <>
       <Head>
