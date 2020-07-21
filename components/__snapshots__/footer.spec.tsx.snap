@@ -18,26 +18,27 @@ exports[`footer snapshots render 1`] = `
             Demo Blog
           </strong>
         </span>
-         Copyright © 2020 . All rights reserved.
+        Copyright © 2020 . All rights reserved.
       </div>
       <div>
-        Made with 
+        Made with
         <a
           className="font-weight-bold"
           href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
+          rel="noreferrer"
           target="_blank"
         >
           Next.js Blog Boilerplate
         </a>
-         by 
+        by
         <a
           className="font-weight-bold"
           href="https://twitter.com/@gmaxi_"
+          rel="noreferrer"
           target="_blank"
         >
           @gmaxi_
         </a>
-        .
       </div>
     </div>
   </footer>

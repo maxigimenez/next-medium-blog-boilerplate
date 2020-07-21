@@ -19,5 +19,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
   ],
-  rules: {}
+  rules: {
+    'react/react-in-jsx-scope': 'off'
+  }
 };

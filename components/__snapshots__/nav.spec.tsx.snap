@@ -12,6 +12,7 @@ exports[`nav snapshots render if categories undefined 1`] = `
     >
       <a
         className="navbar-brand"
+        href="/"
       >
         <strong>
           Demo Blog
@@ -47,6 +48,7 @@ exports[`nav snapshots render if categories undefined 1`] = `
           <a
             className="nav-link"
             href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
+            rel="noreferrer"
             target="_blank"
           >
             Get this blog boilerplate
@@ -70,6 +72,7 @@ exports[`nav snapshots render with categories 1`] = `
     >
       <a
         className="navbar-brand"
+        href="/"
       >
         <strong>
           Demo Blog
@@ -106,6 +109,7 @@ exports[`nav snapshots render with categories 1`] = `
           >
             <a
               className="nav-link"
+              href="/category/category-1"
             >
               Category 1
             </a>
@@ -121,6 +125,7 @@ exports[`nav snapshots render with categories 1`] = `
           >
             <a
               className="nav-link"
+              href="/category/category-2"
             >
               Category 2
             </a>
@@ -136,6 +141,7 @@ exports[`nav snapshots render with categories 1`] = `
           <a
             className="nav-link"
             href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
+            rel="noreferrer"
             target="_blank"
           >
             Get this blog boilerplate
@@ -159,6 +165,7 @@ exports[`nav snapshots render without categories 1`] = `
     >
       <a
         className="navbar-brand"
+        href="/"
       >
         <strong>
           Demo Blog
@@ -194,6 +201,7 @@ exports[`nav snapshots render without categories 1`] = `
           <a
             className="nav-link"
             href="https://github.com/maxigimenez/next-medium-blog-boilerplate"
+            rel="noreferrer"
             target="_blank"
           >
             Get this blog boilerplate
