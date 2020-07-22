@@ -1,4 +1,4 @@
-name: Build, Test
+name: Test & Lint
 
 on:
   push:
@@ -7,24 +7,25 @@ on:
     types: [ opened, synchronize ]
 
 jobs:
-  build:
+  dependencies:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - run: yarn install --frozen-lockfile --check-files
     - uses: actions/cache@v1
-      id: cache-build
+      id: cache-dependencies
       with:
         path: '.'
         key: ${{ github.sha }}
 
-  test:
+  test-lint:
     runs-on: ubuntu-latest
-    needs: build
+    needs: dependencies
     steps:
       - uses: actions/cache@v1
-        id: restore-build
+        id: restore-dependencies
         with:
           path: '.'
           key: ${{ github.sha }}
       - run: yarn test
+      - run: yarn lint
