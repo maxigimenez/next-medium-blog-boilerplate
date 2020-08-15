@@ -6,8 +6,8 @@ import { ContentfulService } from './integrations';
  */
 jest.mock('./integrations', () => {
   return {
-    ContentfulService: jest.fn()
-  }
+    ContentfulService: jest.fn(),
+  };
 });
 
 describe('API', () => {
