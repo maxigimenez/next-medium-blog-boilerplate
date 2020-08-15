@@ -8,5 +8,6 @@
     "url": "https://sheetapi.co/apis/8oSEuumQgFaBfkbdNktgtw",
     "success": "Thank you for signing up. You will be the first to know about new releases",
     "error": "An error occurred, please try again"
-  }
+  },
+  "integration": "contentful"
 }

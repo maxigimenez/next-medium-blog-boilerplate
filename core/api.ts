@@ -1,14 +1,13 @@
 import { Post, Category } from './models';
 import { ContentfulService, IntegrationService } from './integrations';
-
-export enum Integrations {
-  CONTENTFUL = 'contentful',
-}
+import { Integrations } from './typings';
+import config from '@/config';
 
 export class API {
   private _client: IntegrationService;
 
-  constructor(integration: Integrations = Integrations.CONTENTFUL) {
+  constructor() {
+    const integration = this._resolveIntegration();
     switch (integration) {
       case Integrations.CONTENTFUL:
         this._client = new ContentfulService();
@@ -44,5 +43,12 @@ export class API {
 
   getCategoriesPaths(): Promise<string[]> {
     return this._client.getCategoriesPaths();
+  }
+
+  private _resolveIntegration(): Integrations {
+    if (config.integration && Object.values(Integrations).includes(config.integration)) {
+      return config.integration;
+    }
+    return Integrations.CONTENTFUL;
   }
 }
