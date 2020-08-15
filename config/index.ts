@@ -1,5 +1,5 @@
 import config from '../config.json';
-import { Integrations } from '@/core/typings'
+import { Integrations } from '@/core/typings';
 
 interface Config {
   name: string;
