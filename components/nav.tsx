@@ -32,7 +32,7 @@ export const Nav = ({ categories }: Props) => (
             categories.map((category: Category) => {
               return (
                 <li key={category.slug} className="nav-item">
-                  <Link href="/category/[id]" as={`/category/${category.slug}`}>
+                  <Link href={`/category/${category.slug}`}>
                     <a href={`/category/${category.slug}`} className="nav-link">
                       {category.name}
                     </a>
