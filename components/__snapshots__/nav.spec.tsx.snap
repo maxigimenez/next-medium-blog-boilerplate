@@ -104,8 +104,7 @@ exports[`nav snapshots render with categories 1`] = `
           key="category-1"
         >
           <Link
-            as="/category/category-1"
-            href="/category/[id]"
+            href="/category/category-1"
           >
             <a
               className="nav-link"
@@ -120,8 +119,7 @@ exports[`nav snapshots render with categories 1`] = `
           key="category-2"
         >
           <Link
-            as="/category/category-2"
-            href="/category/[id]"
+            href="/category/category-2"
           >
             <a
               className="nav-link"
